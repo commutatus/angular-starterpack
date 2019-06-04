@@ -3,15 +3,19 @@ import {NgModule} from '@angular/core';
 
 import {LimitToDirective} from './limit-to.directive';
 import {SearchInputDirective} from './search-input.directive';
+import { InfiniteScrollDirective } from './infinite-scroll.directive';
+
 
 @NgModule({
   declarations: [
     LimitToDirective,
-    SearchInputDirective
+    SearchInputDirective,
+    InfiniteScrollDirective
   ],
   exports: [
     LimitToDirective,
-    SearchInputDirective
+    SearchInputDirective,
+    InfiniteScrollDirective
   ],
   imports: [
     CommonModule
