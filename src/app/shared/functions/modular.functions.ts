@@ -17,7 +17,7 @@ export function getRelativeTime(dateTime) {
     const minuteInMilli = 60000;
 
     if (difference >= dayInMilli) {
-        return moment(date).format(`MMM Do, h:mm a`);
+        return moment(date).format(`h:mm a`);
     } else if (difference >= hourInMilli) {
         const diff = today.diff(date, 'hours');
         return `${diff} ${diff > 1 ? 'hours' : 'hour'} ago`;
@@ -28,6 +28,7 @@ export function getRelativeTime(dateTime) {
         return 'Just now';
     }
 }
+
 export function getMinimalisticRelativeTime(dateTime) {
     if (!dateTime) {
         return null;
@@ -55,6 +56,7 @@ export function getMinimalisticRelativeTime(dateTime) {
         return duration.seconds() + 's';
     }
 }
+
 
 // Object manipulation
 
@@ -121,3 +123,67 @@ export const isObjectEmpty = obj => {
     }
     return true;
 };
+
+// Miscellaneous
+
+export function makeErrorText(
+    field: string,
+    errorType?: string,
+    subErrorTypes?: any
+) {
+    const FORM_ERRORS = {
+        maxlength: ' should not exceed ',
+        minlength: ' should be at least ',
+        pattern: ' is invalid',
+        required: ' is required',
+        forbiddenText: ' ',
+        min: ' should be '
+    };
+
+    let string = '';
+    string += field;
+    if (FORM_ERRORS[errorType]) {
+        if (errorType && FORM_ERRORS[errorType]) {
+            string += FORM_ERRORS[errorType];
+        }
+        if (FORM_ERRORS[errorType] && subErrorTypes) {
+            for (let item of Object.keys(subErrorTypes)) {
+                switch (item) {
+                    case 'requiredLength':
+                        string += `${subErrorTypes[item]} characters`;
+                        break;
+                    case 'forbiddenText':
+                        string += `${subErrorTypes[item]}`;
+                        break;
+                    case 'minlength':
+                        string += `${subErrorTypes[item].requiredLength} characters`;
+                        break;
+                    case 'maxlength':
+                        string += `${subErrorTypes[item].requiredLength} characters`;
+                        break;
+                    case 'min':
+                        if (subErrorTypes[item] === 0) {
+                            string += `non-negative`;
+                        } else {
+                            string += `at least ${subErrorTypes[item]}`;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+    } else {
+        string += ` ${subErrorTypes}`;
+    }
+
+    return string;
+}
+
+export function isMobile() {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        return true;
+    } else {
+        return false;
+    }
+}
