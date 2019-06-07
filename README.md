@@ -1,27 +1,60 @@
-# AngularStarterpack
+### AngularStarterpack
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+This is an Angular Boilerplate that can be used to kickstart the development on any Angular project with speed. In the 4 years of working in a service industry, we have built numerous projects and accumulated a lot of learnings from them, that are baked into this boilerplate. Over time, we also noticed certain similarities that repeat themselves in all the projects. We did not necessarily have to re-invent the wheel everytime a new project was started. This boilerplate was all that we would need to get to writing the business logic of the project, the stuff that truly mattered. Using this boilerplate as the base for a project would also force devs to adopt a certian standard set by the boilerplate, thereby ensuring everyone is writing efficient, abstarcted and highly readable code!
 
-## Development server
+The boilerplate has/will have the following- 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Components
 
-## Code scaffolding
+1. Linear loader (In Progress)
+2. Spinner (In Progress)
+3. Pseudo cards (In Progress)
+4. Avatar (In Progress)
+5. Success/Error Toast Messages (In Progress)
+6. Action Buttons (In Progress)
+7. Action Modals (In Progress)
+8. Error Modals (In Progress)
+9. Confirmations Modals (In Progress)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Directives
 
-## Build
+1. Limit-to 
+2. Search Input 
+3. Lazy load images directive 
+4. Infinite Scroll 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Pipes
 
-## Running unit tests
+1. safeHTML 
+2. moment parser 
+3. join 
+4. duration 
+5. titlelize 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Services
 
-## Running end-to-end tests
+1. Authentication (basic scaffolding) (In Progress)
+2. User Service (basic scaffolding) (In Progress)
+3. Apollo Service (In Progress)
+4. Error Service (In Progress)
+5. Constants service (In Progress)
+6. Validators (In Progress)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Style components
 
-## Further help
+1. Icon pack (In Progress)
+2. Fonts & typography (In Progress)
+3. Navbar (In Progress)
+4. Animations/Micro interactions (In Progress)
+5. Layouts (In Progress)
+    1. Grids
+    2. Cards
+    3. Panels
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Modular Functions
+
+1. DeepCopy 
+2. makeDateTime 
+3. isObjectEmpty
+4. isMobile 
+5. getRelativeTime
