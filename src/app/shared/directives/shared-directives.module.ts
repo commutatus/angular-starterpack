@@ -24,5 +24,5 @@ import { LazyLoadDirective } from './lazy-load.directive';
     CommonModule
   ]
 })
-export class DirectivesModule {
+export class SharedDirectivesModule {
 }
