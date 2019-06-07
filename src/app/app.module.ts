@@ -6,12 +6,12 @@ import {DirectivesModule} from './shared/directives/directives.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DirectivesModule
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DirectivesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
