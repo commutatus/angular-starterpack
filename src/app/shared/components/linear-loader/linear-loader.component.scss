@@ -1,0 +1,150 @@
+@import '../../../../assets/styles/app';
+
+.indeterminate-progress-bar {
+  width: 100%;
+  height: 2px;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  animation-name: colors 1.5s infinite ease-out 0s;
+  -webkit-animation: colors 1.5s infinite ease-out 0s;
+
+  .colors {
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: #DA4530;
+    animation-name: loader 1.5s infinite ease-out 0s;
+    -webkit-animation: loader 1.5s infinite ease-out 0s;
+  }
+}
+
+
+@keyframes loader {
+  0% {
+    width: 0;
+    background-color: $white-color;
+  }
+  24.9% {
+    width: 100%;
+    background-color: $white-color;
+  }
+  25% {
+    width: 0;
+    background-color: $blue-color;
+  }
+  49.9% {
+    width: 100%;
+    background-color: $blue-color;
+  }
+  50% {
+    width: 0;
+    background-color: $app-background-color;
+  }
+  74.9% {
+    width: 100%;
+    background-color: $app-background-color;
+  }
+  75% {
+    width: 0;
+    background-color: $blue-color;
+  }
+  100% {
+    width: 100%;
+    background-color: $blue-color;
+  }
+}
+
+@-webkit-keyframes loader {
+  0% {
+    width: 0;
+    background-color: $white-color;
+  }
+  24.9% {
+    width: 100%;
+    background-color: $white-color;
+  }
+  25% {
+    width: 0;
+    background-color: $blue-color;
+  }
+  49.9% {
+    width: 100%;
+    background-color: $blue-color;
+  }
+  50% {
+    width: 0;
+    background-color: $app-background-color;
+  }
+  74.9% {
+    width: 100%;
+    background-color: $app-background-color;
+  }
+  75% {
+    width: 0;
+    background-color: $white-color;
+  }
+  100% {
+    width: 100%;
+    background-color: $white-color;
+  }
+}
+
+@keyframes colors {
+  0% {
+    background-color: $blue-color;
+  }
+  24.9% {
+    background-color: $blue-color;
+  }
+  25% {
+    background-color: $white-color;
+  }
+  49.9% {
+    background-color: $white-color;
+  }
+  50% {
+    background-color: $blue-color;
+  }
+  74.9% {
+    background-color: $blue-color;
+  }
+  75% {
+    background-color: $app-background-color;
+  }
+  100% {
+    background-color: $app-background-color;
+  }
+}
+
+@-webkit-keyframes colors {
+  0% {
+    background-color: $blue-color;
+  }
+  24.9% {
+    background-color: $blue-color;
+  }
+  25% {
+    background-color: $white-color;
+  }
+  49.9% {
+    background-color: $white-color;
+  }
+  50% {
+    background-color: $blue-color;
+  }
+  74.9% {
+    background-color: $blue-color;
+  }
+  75% {
+    background-color: $app-background-color;
+  }
+  100% {
+    background-color: $app-background-color;
+  }
+}
