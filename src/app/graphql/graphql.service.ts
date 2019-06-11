@@ -6,7 +6,7 @@ import {InMemoryCache} from 'apollo-cache-inmemory';
 @Injectable({
   providedIn: 'root'
 })
-export class ApolloService {
+export class GraphqlService {
    uri = ''; // <-- add the URL of the GraphQL server here
 
   constructor(

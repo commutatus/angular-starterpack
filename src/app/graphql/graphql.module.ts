@@ -3,7 +3,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {APP_INITIALIZER, NgModule} from '@angular/core';
 import {ApolloModule} from 'apollo-angular';
 import {HttpLinkModule} from 'apollo-angular-link-http';
-import {ApolloService} from './shared/services/apollo.service';
+import {GraphqlService} from './graphql.service';
 
 @NgModule({
   imports: [
@@ -16,15 +16,15 @@ import {ApolloService} from './shared/services/apollo.service';
     {
       provide: APP_INITIALIZER,
       useFactory: initializeApollo,
-      deps: [ApolloService],
+      deps: [GraphqlService],
       multi: true
     },
-    ApolloService
+    GraphqlService
   ]
 })
 export class GraphQLModule {
 }
 
-export function initializeApollo(appApolloService: ApolloService) {
-  return () => appApolloService.initializeApollo();
+export function initializeApollo(graphqlService: GraphqlService) {
+  return () => graphqlService.initializeApollo();
 }
