@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import {LocalStorageService} from 'ngx-webstorage';
 import { map, filter } from 'rxjs/operators';
+import { ConstantType } from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,13 @@ export class ConstantsService {
   constructor(
     private apollo: Apollo,
     private localStorage: LocalStorageService
-  ) { }
+  ) {
+    this.constantTypeList = [
+
+    ];
+
+    this.loadConstantList(this.constantTypeList);
+   }
 
 
   async loadConstantList(constantTypeList) {
