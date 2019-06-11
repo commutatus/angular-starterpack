@@ -77,12 +77,12 @@ export const deepCopyArray = (arr) => {
     const copy = [];
     arr.forEach(elem => {
         if (Array.isArray(elem)) {
-            copy.push(deepCopyArray(elem))
+            copy.push(deepCopyArray(elem));
         } else {
             if (typeof elem === 'object') {
-                copy.push(deepCopyObject(elem))
+                copy.push(deepCopyObject(elem));
             } else {
-                copy.push(elem)
+                copy.push(elem);
             }
         }
     });
@@ -105,7 +105,7 @@ export const deepCopyObject = (obj) => {
             if (typeof obj[key] === 'object') {
                 tempObj[key] = deepCopyObject(obj[key]);
             } else {
-                tempObj[key] = obj[key]
+                tempObj[key] = obj[key];
             }
         }
     }
@@ -147,7 +147,7 @@ export function makeErrorText(
             string += FORM_ERRORS[errorType];
         }
         if (FORM_ERRORS[errorType] && subErrorTypes) {
-            for (let item of Object.keys(subErrorTypes)) {
+            for (const item of Object.keys(subErrorTypes)) {
                 switch (item) {
                     case 'requiredLength':
                         string += `${subErrorTypes[item]} characters`;
