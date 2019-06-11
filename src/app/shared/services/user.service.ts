@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class GraphqlService {
+export class UserService {
   
   userDataLoading = new BehaviorSubject(null);
   currentUser: any;
