@@ -93,11 +93,12 @@ export const deepCopyObject = (obj) => {
     if (!obj) {
         return obj;
     }
-    if (obj instanceof Date || obj instanceof Function) {
+
+    const keys = Object.keys(obj);
+    if (!keys.length) {
         return obj;
     }
     const tempObj = {};
-    const keys = Object.keys(obj);
     for (const key of keys) {
         if (Array.isArray(obj[key])) {
             tempObj[key] = deepCopyArray(obj[key]);
