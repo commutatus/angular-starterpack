@@ -57,11 +57,11 @@
                 }
               ]
             },
-            "hmr": {
+            "dev": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.hmr.ts"
+                  "with": "src/environments/environment.dev.ts"
                 }
               ]
             }
@@ -76,9 +76,9 @@
             "production": {
               "browserTarget": "angular-starterpack:build:production"
             },
-            "hmr": {
+            "dev": {
               "hmr": true,
-              "browserTarget": "angular-starterpack:build:hmr"
+              "browserTarget": "angular-starterpack:build:dev"
             }
           }
         },
