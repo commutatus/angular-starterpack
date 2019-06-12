@@ -5,7 +5,8 @@
     "ng": "ng",
     "start": "node server.js",
     "serve": "ng serve --configuration=dev",
-    "start:local": "concurrently --kill-others \"node server.js\" \"npm run serve\"",
+    "start:staging": "gulp set --env=staging && concurrently --kill-others \"node server.js\" \"npm run serve\"",
+    "start:prod": "gulp set --env=prod && concurrently --kill-others \"node server.js\" \"npm run serve\"",
     "build": "ng build --configuration=production",
     "test": "ng test",
     "lint": "ng lint",
@@ -51,6 +52,9 @@
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
     "dotenv": "^8.0.0",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-rename": "^1.4.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.0",
@@ -61,6 +65,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "^3.2.4"
+    "typescript": "^3.2.4",
+    "yargs": "^13.2.4"
   }
 }
