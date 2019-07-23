@@ -3,12 +3,33 @@ const app = express()
 const path = require('path');
 const secure = require('ssl-express-www');
 const compression = require('compression');
+const helmet = require('helmet');
 
 if(!process.env.environment) {
     require('dotenv').config();
 }
 
-app.use(secure);
+// Uncommented this when ssl is setup for your app
+// app.use(secure);
+
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            objectSrc: [
+                "'none'",
+            ],
+            baseUri: [
+                "'self'",
+            ],
+            formAction: [
+                "'none'",
+            ],
+            frameAncestors: [
+                "'none'",
+            ]
+        }
+    }
+}));
 
 app.use(compression());
 
