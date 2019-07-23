@@ -57,7 +57,7 @@ export class GraphqlService {
   authMiddleware() {
     return new ApolloLink((operation, forward) => {
       // Check for token
-      const token: string = this.cookies.get('YOURTOKEN') || null;
+      const token: string = this.cookies.get('YOUR-TOKEN') || null;
       if (!token) {
         return forward(operation);
       }
@@ -107,7 +107,7 @@ export class GraphqlService {
 
   async fetchSchema() {
 
-    const token = JSON.parse(this.cookies.get('YOURTOKEN') || null);
+    const token = JSON.parse(this.cookies.get('YOUR-TOKEN') || null);
 
     let uri;
     if (token && token.access_token) {

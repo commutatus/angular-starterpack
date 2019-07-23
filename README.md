@@ -5,7 +5,7 @@ This is an Angular Boilerplate that can be used to kickstart the development on 
 In order to set this up:
 1 => Change the name of this app from angular-starterpack to whatever you wish to keep.
 2 => Have a env folder in your root directory with staging.env and prod.env files in it.
-3 => Use your configs whereever there is "YOUR" prefix.
+3 => Use your configs whereever there is "YOUR-" prefix.
 3 => Run npm install
 4 => For staging: npm run start:staging, For prod: npm run start:prod
 

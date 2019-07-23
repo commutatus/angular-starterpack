@@ -12,7 +12,7 @@ export const staging = {
   ... prodEnv.staging,
   ... environment,
   // ... {
-  //   keyname: 'YOURVALUETOOVERWRITE' // Overwrite the keys to run on local environment
+  //   keyname: 'YOUR-VALUETOOVERWRITE' // Overwrite the keys to run on local environment
   // }
 };
 
@@ -21,6 +21,6 @@ export const prod = {
   ... prodEnv.prod,
   ... environment,
   // ... {
-  //   keyname: 'YOURVALUETOOVERWRITE' // Overwrite the keys to run on local environment
+  //   keyname: 'YOUR-VALUETOOVERWRITE' // Overwrite the keys to run on local environment
   // }
 };

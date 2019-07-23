@@ -11,14 +11,14 @@ export const environment = {
 export const staging = {
   ... environment,
   // ... {
-  //   api: 'YOURAPIURL'
+  //   api: 'YOUR-APIURL'
   // },
 };
 
 export const prod = {
   ... environment,
   // ... {
-  //   api: 'YOURAPIURL'
+  //   api: 'YOUR-APIURL'
   // }
 };
 
