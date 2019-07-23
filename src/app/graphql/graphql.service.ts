@@ -15,7 +15,6 @@ import { CookieService } from 'ngx-cookie-service';
 export class GraphqlService {
 
    schema: any;
-   environmentName: any;
    environment: any;
    appApiEndpoint: any;
    host: any;
@@ -31,11 +30,13 @@ export class GraphqlService {
 
   async initializeApollo(): Promise<any> {
 
-    this.environmentName = await this.getEnvironment().catch(e => {
+    const env: any = await this.getEnvironment().catch(e => {
       console.error('Error fetching environment');
     });
 
-    this.environment = this.environmentName === 'staging' ? staging : prod;
+    this.environment = env && env.ENVIRONMENT === 'staging' ? staging : prod;
+
+    this.environment = {...this.environment, ...env};
 
     const http = this.httpLink.create({uri: `${this.environment.api}/graphql`});
     const fragmentMatcher = await this.buildFragmentMatcher().catch(e => {
