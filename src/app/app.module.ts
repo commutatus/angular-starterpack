@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {GraphQLModule} from './graphql/graphql.module';
 import {SharedComponentsModule} from './shared/components/shared-components.module';
 import {SharedDirectivesModule} from './shared/directives/shared-directives.module';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import {SharedDirectivesModule} from './shared/directives/shared-directives.modu
     GraphQLModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    CookieService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -32,6 +32,10 @@ app.get('/getEnvironment', (req, res) => {
     res.status(200).json({environment});
 });
 
+app.get('/getEnvironment', (req, res) => {
+    const environment = process.env.environment;
+    res.status(200).json({ environment });
+});
 
 
 app.get('/*', function(req, res) {
