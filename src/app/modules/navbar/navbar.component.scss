@@ -1,0 +1,28 @@
+@import './src/assets/styles/app';
+
+
+.nav-container {
+  height: 66px;
+
+  .nav-wrapper {
+    position: fixed;
+    height: 66px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid $border-color;
+    background: $white;
+    z-index: 1000;
+
+    .app-navbar {
+      position: fixed;
+      background: $white;
+      height: 65px;
+      max-width: 1440px;
+      padding: $spacer-16 $spacer-48;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}

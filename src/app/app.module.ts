@@ -7,6 +7,7 @@ import {GraphQLModule} from './graphql/graphql.module';
 import {SharedComponentsModule} from './shared/components/shared-components.module';
 import {SharedDirectivesModule} from './shared/directives/shared-directives.module';
 import { CookieService } from 'ngx-cookie-service';
+import { NavbarModule } from './modules/navbar/navbar.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CookieService } from 'ngx-cookie-service';
     SharedDirectivesModule,
     SharedComponentsModule,
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    NavbarModule
   ],
   providers: [
     CookieService,

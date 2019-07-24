@@ -7,6 +7,7 @@ import {ConfirmationModalComponent} from './confirmation-modal/confirmation-moda
 import {ErrorComponent} from './error-modal/error.component';
 import { ConfirmationModalModule } from './confirmation-modal.1/confirmation-modal.module';
 import { ToastComponent } from './toast/toast.component';
+import { LinearLoaderModule } from './linear-loader/linear-loader.module';
 
 
 @NgModule({
@@ -21,13 +22,15 @@ import { ToastComponent } from './toast/toast.component';
   imports: [
     CommonModule,
     ConfirmationModalModule,
+    LinearLoaderModule,
   ],
   exports: [
     ActionButtonComponent,
     ActionModalComponent,
     ConfirmationModalComponent,
     ErrorComponent,
-    ToastComponent
+    ToastComponent,
+    LinearLoaderModule
   ]
 })
 export class SharedComponentsModule {
