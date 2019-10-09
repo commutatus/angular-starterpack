@@ -1,8 +1,6 @@
-import { Injectable } from '@angular/core';
-import { Apollo } from 'apollo-angular';
-import {LocalStorageService} from 'ngx-webstorage';
-import { map, filter } from 'rxjs/operators';
-import { ConstantType } from '../models';
+import {Injectable} from '@angular/core';
+import {Apollo} from 'apollo-angular';
+import {ConstantType} from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -13,26 +11,20 @@ export class ConstantsService {
   constantList: any = {};
 
   constructor(
-    private apollo: Apollo,
-    private localStorage: LocalStorageService
+    private apollo: Apollo
   ) {
-    this.constantTypeList = [
-
-    ];
-
+    this.constantTypeList = [];
     this.loadConstantList(this.constantTypeList);
-   }
+  }
 
 
   async loadConstantList(constantTypeList) {
-
-    const localVersion = this.localStorage.retrieve('constantVersion');
+    const localVersion = localStorage.getItem('constantVersion');
     const version = await this.getVersion();
-    this.localStorage.store('constantVersion', version);
+    localStorage.setItem('constantVersion', `${version}`);
 
     constantTypeList.forEach(constantType => {
-
-      const list = this.localStorage.retrieve(constantType);
+      const list = localStorage.getItem(constantType);
       if (list && +localVersion === +version) {
         this.constantList[constantType] = list;
       } else {
@@ -40,6 +32,7 @@ export class ConstantsService {
       }
     });
   }
+
 
   setConstantList(type) {
 
@@ -67,11 +60,13 @@ export class ConstantsService {
 
 
   getConstant(type): Promise<Array<ConstantType>> {
-    const list = this.localStorage.retrieve(type);
+    const list: any = JSON.parse(localStorage.getItem(type));
+
     return new Promise(async (resolve, reject) => {
-      const localVersion = this.localStorage.retrieve('constantVersion');
+      const localVersion = localStorage.getItem('constantVersion');
       const version = await this.getVersion();
-      this.localStorage.store('constantVersion', version);
+      localStorage.setItem('constantVersion', `${version}`);
+
       if (list && +localVersion === +version) {
         return resolve(list);
       }
