@@ -38,7 +38,6 @@
     "moment": "^2.24.0",
     "ngx-bootstrap": "^5.1.0",
     "ngx-cookie-service": "^2.2.0",
-    "ngx-webstorage": "^4.0.1",
     "path": "^0.12.7",
     "rxjs": "~6.5.2",
     "ssl-express-www": "^3.0.3",
