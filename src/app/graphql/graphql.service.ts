@@ -7,6 +7,7 @@ import ApolloClient from 'apollo-client';
 import {ApolloLink, concat} from 'apollo-link';
 import gql from 'graphql-tag';
 import {CookieService} from 'ngx-cookie-service';
+
 import {prod, staging} from '../../environments/environment';
 
 @Injectable({
@@ -33,7 +34,7 @@ export class GraphqlService {
     const env: any = await this.getEnvironment().catch(e => {
       console.error('Error fetching environment');
     });
-    this.environment = env && env.ENVIRONMENT === 'staging' ? staging : prod;
+    this.environment = env === 'staging' ? staging : prod;
     this.environment = {...this.environment, ...env};
     const http = this.httpLink.create({uri: `${this.environment.api}/graphql`});
     const fragmentMatcher = await this.buildFragmentMatcher().catch(e => {

@@ -1,3 +1,15 @@
-<p>
-  confirmation-modal works!
-</p>
+<div bsModal #confirmationModal="bs-modal" class="modal fade app-modal" tabindex="-1" (onHidden)="hideModal()"
+     [config]="{show: true, backdrop: 'static', ignoreBackdropClick: true, keyboard: false}"
+     role="dialog" aria-labelledby="confirmationModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p class="subheader-text">{{customContent}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="app-btn--thin primary" (click)="closeModal(true)">{{customSubmitText || 'Yes'}}</button>
+        <button type="button" class="app-btn--thin outline" (click)="closeModal(false)">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
