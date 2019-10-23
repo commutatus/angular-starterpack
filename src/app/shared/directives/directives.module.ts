@@ -27,5 +27,5 @@ import { DefaultImageDirective } from './default-image.directive';
     CommonModule
   ]
 })
-export class SharedDirectivesModule {
+export class DirectivesModule {
 }

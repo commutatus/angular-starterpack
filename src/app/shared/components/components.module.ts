@@ -29,5 +29,5 @@ import {ToastComponent} from './toast/toast.component';
     LinearLoaderModule
   ]
 })
-export class SharedComponentsModule {
+export class ComponentsModule {
 }

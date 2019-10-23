@@ -8,8 +8,8 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {GraphQLModule} from './graphql/graphql.module';
 import {NavbarModule} from './modules/navbar/navbar.module';
-import {SharedComponentsModule} from './shared/components/shared-components.module';
-import {SharedDirectivesModule} from './shared/directives/shared-directives.module';
+import {ComponentsModule} from './shared/components/components.module';
+import {DirectivesModule} from './shared/directives/directives.module';
 
 @NgModule({
   declarations: [
@@ -18,8 +18,8 @@ import {SharedDirectivesModule} from './shared/directives/shared-directives.modu
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedDirectivesModule,
-    SharedComponentsModule,
+    DirectivesModule,
+    ComponentsModule,
     GraphQLModule,
     HttpClientModule,
     NavbarModule
