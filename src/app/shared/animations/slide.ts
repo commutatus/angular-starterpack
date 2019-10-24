@@ -55,4 +55,38 @@ export const slideInFade: any = trigger('slideInFade', [
   ]),
 ]);
 
+export const slideInOutLeft: any =
+  trigger('slideInOutLeft', [
+    transition(':enter', [
+      style({left: '-550px'}),
+      animate('0.3s cubic-bezier(1,0,0,1)', style({left: 0}))
+    ]),
+    transition(':leave', [
+      style({left: 0}),
+      animate('0.3s cubic-bezier(1,0,0,1)', style({left: '-550px'}))
+    ])
+  ]);
 
+export const slideInOutRight: any =
+  trigger('slideInOutRight', [
+    transition(':enter', [
+      style({right: '-550px'}),
+      animate('0.3s cubic-bezier(1,0,0,1)', style({right: 0}))
+    ]),
+    transition(':leave', [
+      style({right: 0}),
+      animate('0.3s cubic-bezier(1,0,0,1)', style({right: '-550px'}))
+    ])
+  ]);
+
+export const slideInOutBottom: any =
+  trigger('slideInOutBottom', [
+    transition(':enter', [
+      style({opacity: 0, bottom: '-100%'}),
+      animate('0.3s cubic-bezier(1,0,0,1)', style({opacity: 1, bottom: 0}))
+    ]),
+    transition(':leave', [
+      style({opacity: 1, bottom: 0}),
+      animate('0.3s cubic-bezier(1,0,0,1)', style({opacity: 0, bottom: '-100%'}))
+    ])
+  ]);
