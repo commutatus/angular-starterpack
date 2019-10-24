@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
-import {Error} from './error.constants';
+import {Error} from '../components/error-modal/error.constants';
 
 @Injectable({
   providedIn: 'root'
