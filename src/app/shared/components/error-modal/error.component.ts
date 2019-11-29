@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {UserService} from '../../services/user.service';
-import {ErrorService} from './error.service';
+import {ErrorService} from '../../services/error.service';
 
 @Component({
   selector: 'app-error',

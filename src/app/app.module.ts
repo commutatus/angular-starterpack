@@ -1,13 +1,15 @@
 import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+
+import {CookieService} from 'ngx-cookie-service';
+
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {GraphQLModule} from './graphql/graphql.module';
-import {SharedComponentsModule} from './shared/components/shared-components.module';
-import {SharedDirectivesModule} from './shared/directives/shared-directives.module';
-import { CookieService } from 'ngx-cookie-service';
-import { NavbarModule } from './modules/navbar/navbar.module';
+import {NavbarModule} from './modules/navbar/navbar.module';
+import {ComponentsModule} from './shared/components/components.module';
+import {DirectivesModule} from './shared/directives/directives.module';
 
 @NgModule({
   declarations: [
@@ -16,14 +18,14 @@ import { NavbarModule } from './modules/navbar/navbar.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedDirectivesModule,
-    SharedComponentsModule,
+    DirectivesModule,
+    ComponentsModule,
     GraphQLModule,
     HttpClientModule,
     NavbarModule
   ],
   providers: [
-    CookieService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

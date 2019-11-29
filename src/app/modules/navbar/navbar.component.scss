@@ -15,14 +15,12 @@
     z-index: 1000;
 
     .app-navbar {
-      position: fixed;
-      background: $white;
-      height: 65px;
+      width: 100%;
+      display: flex;
       max-width: 1440px;
       padding: $spacer-16 $spacer-48;
-      display: flex;
       justify-content: space-between;
-      width: 100%;
+      align-items: center;
     }
   }
 }
