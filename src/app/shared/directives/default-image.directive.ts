@@ -7,7 +7,7 @@ import { GraphqlService } from 'src/app/graphql/graphql.service';
 export class DefaultImageDirective implements AfterViewInit, AfterViewChecked {
 
   @Input() type: string;
-  @Input() initial: string;
+  @Input() initial: string = '?';
 
   ele: HTMLImageElement;
 
@@ -35,10 +35,8 @@ export class DefaultImageDirective implements AfterViewInit, AfterViewChecked {
    setDefaultImage() {
     switch (this.type) {
       case 'person':
-        if (this.initial) {
-          this.initial = this.initial.toUpperCase();
-          this.getBackGroundColor();
-        }
+        this.initial = this.initial.toUpperCase();
+        this.getBackGroundColor();
         const svg1 = `<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
               <title>missing_profile_a</title>
@@ -70,7 +68,7 @@ export class DefaultImageDirective implements AfterViewInit, AfterViewChecked {
    getBackGroundColor() {
     if (this.initial === 'P' || this.initial === 'A' || this.initial === 'F' || this.initial === 'K' || this.initial === 'U' || this.initial === 'Z') {
      return '#FF5630';
-    } else if (this.initial === 'B' || this.initial === 'G' || this.initial === 'L' || this.initial === 'Q' || this.initial === 'V') {
+    } else if (this.initial === 'B' || this.initial === 'G' || this.initial === 'L' || this.initial === 'Q' || this.initial === 'V' || this.initial === '?') {
      return '#FFAB00';
     } else if (this.initial === 'C' || this.initial === 'H' || this.initial === 'M' || this.initial === 'R' || this.initial === 'W') {
      return '#36B37E';
