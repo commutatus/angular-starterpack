@@ -47,7 +47,7 @@ export class DefaultImageDirective implements AfterViewInit, AfterViewChecked {
                       <g id="missing_profile_a" transform="translate(127.000000, 429.000000)">
                           <rect id="Rectangle-path" fill="${this.getBackGroundColor()}" fill-rule="nonzero" x="0" y="0" width="100" height="100"></rect>
                           <text id="A" fill="#FFFFFF" font-family="Helvetica" font-size="64.4749" font-weight="normal">
-                              <tspan x="28" y="74">${this.initial}</tspan>
+                              <tspan x="50%" y="75%" text-anchor="middle">${this.initial}</tspan>
                           </text>
                       </g>
                   </g>
