@@ -10,7 +10,9 @@
     "build": "ng build --configuration=production",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "ivy-ngcc": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
+    "postinstall": "npm run ivy-ngcc"
   },
   "private": true,
   "dependencies": {
